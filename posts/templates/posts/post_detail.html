@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}{{ post.title }} Title fake{% endblock title %}
+{% block content %}
+  <div class="col-lg-8">
+    <h1 class="mt-4">{{ post.title }}</h1>
+    <hr>
+    <p class="col-lg-6">Postado em {{ post.creation_date|date:"d/m/Y \à\s H:i" }}</p>
+    <hr>
+    {% if post.image %}
+      <img class="img-fluid rounded" src="http://placehold.it/900x300" alt="">
+    <hr>
+    {% endif %}
+    {{ post.content|safe }}
+    <hr>
+    {% for tag in post.tag.all %}
+      <a class="btn btn-danger tag-item" href="#" role="button">{{ tag.name }}</a>
+    {% endfor %}
+    <hr>
+    <div class="addthis_inline_share_toolbox"></div>
+    <hr>
+  </div>
+{% endblock content %}
