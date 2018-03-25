@@ -20,6 +20,5 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('tinymce/', include('tinymce.urls')),
     path('', include('posts.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -1,7 +1,6 @@
 from django.db import models
 from django.utils.text import slugify
 from taggit.managers import TaggableManager
-from tinymce.models import HTMLField
 
 
 class Post(models.Model):
@@ -12,7 +11,7 @@ class Post(models.Model):
     )
     title = models.CharField('Title', max_length=255)
     slug = models.SlugField('Slug', max_length=300)
-    content = HTMLField('Content')
+    content = models.TextField('Content')
     status = models.CharField('Status', choices=STATUS_CHOICES, default='published', max_length=20)
     tag = TaggableManager()
     creation_date = models.DateTimeField('Creation date', auto_now_add=True)

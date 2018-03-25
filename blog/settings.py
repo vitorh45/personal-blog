@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'posts',
     # external apps
     'taggit',
-    'tinymce',
 ]
 
 MIDDLEWARE = [
@@ -132,13 +131,3 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(PROJECT_ROOT, 'static'),
 )
-
-TINYMCE_DEFAULT_CONFIG = {
-    'plugins': "table,spellchecker,paste,searchreplace,autolink,emotions,fullpage,fullscreen",
-    'theme': "advanced",
-    'toolbar1': "newdocument,fullpage",
-    'cleanup_on_startup': True,
-    'custom_undo_redo_levels': 10,
-    'height': 400,
-    'width': 1000,
-}
