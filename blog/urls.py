@@ -17,8 +17,12 @@ from django.contrib import admin
 from django.conf import settings
 from django.urls import path, include
 from django.conf.urls.static import static
+from core import views
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('about/', views.about, name='about'),
+    # path('contract/', views.contact, name='contact'),
     path('', include('posts.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
