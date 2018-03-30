@@ -23,3 +23,7 @@ body {
     font-size: 0.85rem;
     padding: .15rem .55rem;
 }
+
+.btn-larger {
+    padding: 0.5rem 4rem
+}
