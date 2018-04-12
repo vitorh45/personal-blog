@@ -1,10 +1,11 @@
 {% extends 'base.html' %}
+{% block title %}Resultados da busca por: "{{ query }}" - {% endblock title %}
 {% block content %}
 
   <!-- Blog Entries Column -->
   <div class="col-md-8">
 
-    <h3 class="my-4">Resultados da busca.
+    <h3 class="my-4">Resultados da busca por: <strong>"{{ query }}"</strong>
     </h3>
 
     {% for post in posts_list %}

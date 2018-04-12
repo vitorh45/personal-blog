@@ -26,5 +26,6 @@ urlpatterns = [
     path('contact/', views.contact, name='contact'),
     path('search/', views.search, name='search'),
     path('tags/<slug:tag>/', views.tags, name='tags'),
+    path('i18n/', include('django.conf.urls.i18n')),
     path('', include('posts.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

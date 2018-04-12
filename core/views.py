@@ -18,7 +18,7 @@ def contact(request):
     form = ContactForm(request.POST or None)
     if form.is_valid():
         form.save()
-        messages.success(request, 'Mesagem enviada com sucesso!')  # <-
+        messages.success(request, 'Mesagem enviada com sucesso!')
         return redirect('contact')
     context = {'form': form}
     return render(request, 'core/contact.html', context)
@@ -30,7 +30,7 @@ def search(request):
     posts = Post.objects.filter(Q(title__contains=query) | Q(content__contains=query))
     paginator = Paginator(posts, 4)
     posts = paginator.get_page(page)
-    context = {'posts_list': posts}
+    context = {'posts_list': posts, 'query': query}
     return render(request, 'core/search.html', context)
 
 
