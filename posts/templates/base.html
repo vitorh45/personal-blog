@@ -10,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" type="image/png" href="{% static 'images/favicon.png' %}">
-    <title>{% block title %}Vitorh45 Blog{% endblock title %}</title>
+    <title>{% block title %}{% endblock title %}Vitorh45 Blog</title>
 
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
     <!-- Bootstrap core CSS -->
@@ -46,6 +46,12 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <span class='flag-icon flag-icon-br float-right' data-language='pt-br'></span>
+            </li>
+            <li class="nav-item">
+              <span class='flag-icon flag-icon-us float-right' data-language='en'></span>
+            </li>
             <li class="nav-item active">
               <a class="nav-link" href="{% url 'post_list' %}">Home
                 <span class="sr-only">(current)</span>
@@ -75,13 +81,13 @@
 
           <!-- Search Widget -->
           <div class="card my-4">
-            <h5 class="card-header">Search</h5>
+            <h5 class="card-header">{% trans 'Busca' %}</h5>
             <div class="card-body">
             <form action='{% url "search" %}' method='GET'>
               <div class="input-group">
-                <input type="text" name='q' class="form-control" placeholder="Search for...">
+                <input type="text" name='q' class="form-control" placeholder="{% trans 'Search for'%}...">
                 <span class="input-group-btn">
-                  <button class="btn btn-secondary" type="submit">Go!</button>
+                  <button class="btn btn-secondary" type="submit">{% trans 'Buscar' %}!</button>
                 </span>
               </div>
             </form>
@@ -121,7 +127,11 @@
 
     </div>
     <!-- /.container -->
-
+    <form id='lang' action="{% url 'set_language' %}" method="post">
+      {% csrf_token %}
+      <input name="next" type="hidden" value="/" />
+      <input name='language' type='hidden' value='' />
+    </form>
    <footer id="myFooter">
       <div class="social-networks">
           <a href="https://github.com/vitorh45" class="github" target="_blank"><i class="fa fa-github"></i></a>
@@ -135,9 +145,18 @@
 
     <!-- Bootstrap core JavaScript -->
     <script src="{% static 'js/jquery.min.js' %}"></script>
-    <script src="{% static 'js/util.js' %}"></script>
     <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'js/dropzone.js' %}"></script>
     <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5aa4fa4d040b314f"></script>
+    <script>
+      (function($) {
+        $('.flag-icon').click(function(){
+           lang = $(this).data('language');
+           $("#lang input[name='language']").val(lang);
+           $('#lang').submit();
+        });
+      })(jQuery);
+    </script>
   </body>
 
 </html>

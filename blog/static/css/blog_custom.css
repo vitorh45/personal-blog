@@ -135,3 +135,28 @@ body{
     flex: 0 0 auto;
     -webkit-flex: 0 0 auto;
 }
+
+.flag-icon {
+  background-size: contain;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  position: relative;
+  display: inline-block;
+  width: 1.33333333em;
+  line-height: 1em;
+  margin-top: 11px;
+}
+
+.flag-icon:before {
+  content: "\00a0";
+}
+
+.flag-icon-br {
+  background-image: url(../images/br.svg);
+  margin-right: 5px;
+}
+
+.flag-icon-us {
+  background-image: url(../images/us.svg);
+  margin-right: 10px;
+}

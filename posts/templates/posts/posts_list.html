@@ -1,10 +1,12 @@
 {% extends 'base.html' %}
+{% load i18n %} 
+{% block title %}Home - {% endblock title %}
 {% block content %}
 
   <!-- Blog Entries Column -->
   <div class="col-md-8">
 
-    <h3 class="my-4">Blog sobre programação com dicas, snippets, tutoriais sobre Python, Django, Flask etc.
+    <h3 class="my-4">{% trans 'Blog sobre programação com dicas, snippets, tutoriais sobre Python, Django, Flask etc' %}.
     </h3>
 
     {% for post in posts_list %}
@@ -13,10 +15,10 @@
       <div class="card-body">
         <h2 class="card-title">{{ post.title }}</h2>
         <p class="card-text">{{ post.content|striptags|truncatewords:"70" }}</p>
-        <a href="{% url 'post_detail' post.slug %}" class="btn btn-primary">Ler mais &rarr;</a>
+        <a href="{% url 'post_detail' post.slug %}" class="btn btn-primary">{% trans 'Ler mais' %} &rarr;</a>
       </div>
       <div class="card-footer text-muted">
-        Postado em {{ post.creation_date|date:"d/m/Y \à\s H:i" }}
+        {% trans 'Postado em' %} {{ post.creation_date|date:"d/m/Y H:i" }}
       </div>
     </div>
     {% endfor %}
