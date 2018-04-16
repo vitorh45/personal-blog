@@ -1,0 +1,93 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-04-16 23:47+1000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: core/templates/core/contact.html:4 core/templates/core/contact.html:8
+#: posts/templates/base.html:58
+msgid "Contact"
+msgstr "Contato"
+
+#: core/templates/core/contact.html:9
+msgid ""
+"Contact me if you have any doubt about the blog, posts or any other thing "
+"and if you want a snippet related to Python, Django or Flask. I'll always "
+"create a post about this and push to github "
+msgstr ""
+"Entre em contato caso tenha alguma dúvida sobre o blog, posts ou qualquer "
+"outra coisa e se quiser algum exemplo de código relacionado à Python, Django "
+"ou Flask. Sempre irei criar um post sobre isso e enviar pro github"
+
+#: core/templates/core/contact.html:17 core/templates/core/contact.html:19
+msgid "Subject"
+msgstr "Assunto"
+
+#: core/templates/core/contact.html:29 core/templates/core/contact.html:31
+msgid "Message"
+msgstr "Mensagem"
+
+#: core/templates/core/contact.html:36
+msgid "Send"
+msgstr "Enviar"
+
+#: core/templates/core/search.html:2 core/templates/core/search.html:8
+msgid "Search result by"
+msgstr "Resultados da busca por"
+
+#: core/templates/core/search.html:17 core/templates/core/tags.html:17
+#: posts/templates/posts/posts_list.html:17
+msgid "Read more"
+msgstr "Leia mais"
+
+#: core/templates/core/search.html:20 core/templates/core/tags.html:20
+#: posts/templates/posts/post_detail.html:18
+#: posts/templates/posts/posts_list.html:20
+msgid "Posted on"
+msgstr "Postado em"
+
+#: core/templates/core/tags.html:2 core/templates/core/tags.html:8
+msgid "Posts with the tag"
+msgstr "Posts com a tag"
+
+#: posts/templates/base.html:55
+msgid "About"
+msgstr "Sobre"
+
+#: posts/templates/base.html:62
+msgid "Languages"
+msgstr "Idiomas"
+
+#: posts/templates/base.html:87 posts/templates/base.html:93
+msgid "Search"
+msgstr "Busca"
+
+#: posts/templates/base.html:91
+msgid "Search for"
+msgstr "Buscar por"
+
+#: posts/templates/base.html:102
+msgid "Most used tags"
+msgstr "Tags mais usadas"
+
+#: posts/templates/posts/posts_list.html:8
+msgid ""
+"Blog about programmimg with tips, snippets, tutorials of Python, Django, "
+"Flask etc "
+msgstr ""
+"Blog de programação com dicas, snippets, tutoriais sobre Python, Django, "
+"Flask etc"
