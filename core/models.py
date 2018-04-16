@@ -1,13 +1,26 @@
 from django.db import models
+from django.utils.translation import get_language
 
 
 class About(models.Model):
 
     title = models.CharField('Title', max_length=200)
+    title_en = models.CharField('Title', max_length=200)
     content = models.TextField('Content')
+    content_en = models.TextField('Content')
 
     def __str__(self):
         return self.title
+
+    def get_title(self):
+        if get_language() == 'pt-br':
+            return self.title
+        return self.title_en
+
+    def get_content(self):
+        if get_language() == 'pt-br':
+            return self.content
+        return self.content_en
 
 
 class Contact(models.Model):
