@@ -1,9 +1,10 @@
 {% extends 'base.html' %}
-{% block title %}{{ about.title }} - {% endblock title %}
+{% load i18n %}
+{% block title %}{{ about.get_title }} - {% endblock title %}
 
 {% block content %}
   <div class="col-lg-8">
-    <h1 class="mt-4">{{ about.title }}</h1>
-    {{ about.content|safe }}
+    <h1 class="mt-4">{{ about.get_title }}</h1>
+    {{ about.get_content|safe }}
   </div>
 {% endblock content %}

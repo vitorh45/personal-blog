@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
-{% load i18n %} 
-{% block title %}{{ post.title }} - {% endblock title %}
+{% load i18n %}
+{% block title %}{{ post.get_title }} - {% endblock title %}
 {% block facebook-js %}
   <div id="fb-root"></div>
   <script>(function(d, s, id) {
@@ -13,15 +13,15 @@
 {% endblock facebook-js%}
 {% block content %}
   <div class="col-lg-8">
-    <h1 class="mt-4">{{ post.title }}</h1>
+    <h1 class="mt-4">{{ post.get_title }}</h1>
     <hr>
-    <p class="col-lg-6">{% trans 'Postado em' %} {{ post.creation_date|date:"d/m/Y H:i" }}</p>
+    <p class="col-lg-6">{% trans 'Posted on' %} {{ post.creation_date|date:"d/m/Y H:i" }}</p>
     <hr>
     {% if post.image %}
       <img class="img-fluid rounded" src="http://placehold.it/900x300" alt="">
     <hr>
     {% endif %}
-    {{ post.content|safe }}
+    {{ post.get_content|safe }}
     <hr>
     {% for tag in post.tag.all %}
       <a class="btn btn-danger tag-item" href="#" role="button">{{ tag.name }}</a>

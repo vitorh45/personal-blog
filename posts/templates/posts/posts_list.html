@@ -1,24 +1,23 @@
 {% extends 'base.html' %}
-{% load i18n %} 
+{% load i18n %}
 {% block title %}Home - {% endblock title %}
 {% block content %}
 
-  <!-- Blog Entries Column -->
   <div class="col-md-8">
 
-    <h3 class="my-4">{% trans 'Blog sobre programação com dicas, snippets, tutoriais sobre Python, Django, Flask etc' %}.
+    <h3 class="my-4">{% blocktrans %}Blog about programmimg with tips, snippets, tutorials of Python, Django, Flask etc {% endblocktrans %}.
     </h3>
 
     {% for post in posts_list %}
     <!-- Blog Post -->
     <div class="card mb-4">
       <div class="card-body">
-        <h2 class="card-title">{{ post.title }}</h2>
-        <p class="card-text">{{ post.content|striptags|truncatewords:"70" }}</p>
-        <a href="{% url 'post_detail' post.slug %}" class="btn btn-primary">{% trans 'Ler mais' %} &rarr;</a>
+        <h2 class="card-title">{{ post.get_title }}</h2>
+        <p class="card-text">{{ post.get_content|striptags|truncatewords:"70" }}</p>
+        <a href="{% url 'post_detail' post.get_slug %}" class="btn btn-primary">{% trans 'Read more' %} &rarr;</a>
       </div>
       <div class="card-footer text-muted">
-        {% trans 'Postado em' %} {{ post.creation_date|date:"d/m/Y H:i" }}
+        {% trans 'Posted on' %} {{ post.creation_date|date:"d/m/Y H:i" }}
       </div>
     </div>
     {% endfor %}

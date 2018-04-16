@@ -1,4 +1,6 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render
+from django.http import Http404
+from django.db.models import Q
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .models import Post
 
@@ -12,6 +14,9 @@ def post_list(request):
     return render(request, 'posts/posts_list.html', context)
 
 def post_detail(request, slug):
-    post = get_object_or_404(Post, slug=slug)
+    try:
+        post = Post.objects.filter(Q(slug=slug) | Q(slug_en=slug))[0]
+    except:
+        raise Http404()
     context = {'post': post}
     return render(request, 'posts/post_detail.html', context)

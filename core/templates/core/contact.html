@@ -1,20 +1,22 @@
-{% extends 'base.html' %}{% load i18n %}
+{% extends 'base.html' %}
+{% load i18n %}
 
 {% block title %}{% trans 'Contact' %} - {% endblock title %}
 
 {% block content %}
   <div class="col-lg-8">
     <h1 class="mt-4">{% trans 'Contact' %}</h1>
-    <p class='lead'>{% trans 'Entre em contato caso tenha alguma dúvida relacionada ao blog, aos posts ou qualquer outra dúvida e caso queira algum exemplo de código de algo relacionado à Python, Django ou Flask. Sempre irei criar um post comentando sobre e uparei o código no github' %}.</p>
+    <p class='lead'>{% blocktrans %}Contact me if you have any doubt about the blog, posts or any other thing and if you want a snippet related to Python, Django or Flask. I'll always create a post about this and push to github {% endblocktrans %}.</p>
+
     <div class="row">
         <div class="col-md-12">
             <div class="well well-sm">
                 <form action='.' method='POST'>
                 {% csrf_token %}
                   <div class="form-group row">
-                    <label for="id_subject" class="col-sm-2 col-form-label">{% trans 'Assunto' %}:</label>
+                    <label for="id_subject" class="col-sm-2 col-form-label">{% trans 'Subject' %}:</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" id="id_subject" name='subject' placeholder="{% trans 'Assunto' %}">
+                      <input type="text" class="form-control" id="id_subject" name='subject' placeholder="{% trans 'Subject' %}">
                     </div>
                   </div>
                   <div class="form-group row">
@@ -24,14 +26,14 @@
                     </div>
                   </div>
                   <div class="form-group row">
-                    <label for="id_message" class="col-sm-2 col-form-label">{% trans 'Mensagem' %}:</label>
+                    <label for="id_message" class="col-sm-2 col-form-label">{% trans 'Message' %}:</label>
                     <div class="col-sm-10">
-                      <textarea class="form-control" id="id_message" name='message' placeholder="{% trans 'Mensagem' %}" rows="6"></textarea>
+                      <textarea class="form-control" id="id_message" name='message' placeholder="{% trans 'Message' %}" rows="6"></textarea>
                     </div>
                   </div>
                   <div class="form-group row">
                     <div class="col-sm-10">
-                      <button type="submit" class="btn btn-primary btn-larger">{% trans 'Enviar' %}</button>
+                      <button type="submit" class="btn btn-primary btn-larger">{% trans 'Send' %}</button>
                     </div>
                   </div>
                 </form>
