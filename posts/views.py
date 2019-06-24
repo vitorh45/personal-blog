@@ -6,12 +6,13 @@ from .models import Post
 
 
 def post_list(request):
-    posts = Post.objects.all()
+    posts = Post.objects.filter(status='published')
     paginator = Paginator(posts, 4)
     page = request.GET.get('page', 1)
     posts = paginator.get_page(page)
     context = {'posts_list': posts}
     return render(request, 'posts/posts_list.html', context)
+
 
 def post_detail(request, slug):
     try:

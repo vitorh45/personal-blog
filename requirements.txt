@@ -1,7 +1,8 @@
+appnope==0.1.0
 boto3==1.6.9
 botocore==1.9.9
 decorator==4.2.1
-Django==2.0.3
+Django==2.2.2
 django-js-asset==1.0.0
 django-storages==1.6.5
 django-taggit==0.22.2
@@ -22,5 +23,6 @@ pytz==2018.3
 s3transfer==0.1.13
 simplegeneric==0.8.1
 six==1.11.0
+sqlparse==0.3.0
 traitlets==4.3.2
 wcwidth==0.1.7
