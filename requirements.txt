@@ -2,7 +2,7 @@ appnope==0.1.0
 boto3==1.6.9
 botocore==1.9.9
 decorator==4.2.1
-Django==2.2.2
+Django==2.2.8
 django-js-asset==1.0.0
 django-storages==1.6.5
 django-taggit==0.22.2
