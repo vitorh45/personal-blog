@@ -4,6 +4,7 @@ botocore
 decorator
 Django
 django-js-asset
+https://github.com/darklow/django-suit/tarball/v2
 django-storages
 django-taggit
 docutils
